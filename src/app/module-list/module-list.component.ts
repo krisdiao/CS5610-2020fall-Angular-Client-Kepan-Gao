@@ -9,6 +9,7 @@ import {CourseService} from '../../services/course-service';
   styleUrls: ['./module-list.component.css']
 })
 export class ModuleListComponent implements OnInit {
+  courses = [];
   courseId = '';
   modules = [];
   moduleId = '';
