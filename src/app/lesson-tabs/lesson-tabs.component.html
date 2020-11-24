@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs">
+<!--  <li class="nav-item">-->
+<!--    <a class="nav-link active" href="#">-->
+<!--      Lessons{{lessonId}}-->
+<!--    </a>-->
+<!--  </li>-->
+  <li
+    *ngFor="let lesson of lessons"
+    [ngClass]="{'list-group-item-success': lesson._id === lessonId}"
+    class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics">
+      {{lesson.title}}
+    </a>
+  </li>
+</ul>

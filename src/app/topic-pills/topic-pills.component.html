@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+<!--  <li class="nav-item">-->
+<!--    <a class="nav-link"-->
+<!--       href="#">-->
+<!--      Topics{{topicId}}-->
+<!--    </a>-->
+<!--  </li>-->
+  <li
+    *ngFor="let topic of topics"
+    [ngClass]="{'list-group-item-success': topic._id === topicId}"
+    class="nav-item">
+    <a
+      class="nav-link"
+      routerLink="#">
+      {{topic.title}}
+    </a>
+  </li>
+</ul>
