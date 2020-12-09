@@ -1,0 +1,29 @@
+<h3>{{question.question}}</h3>
+<ul class="list-group">
+    <li
+      [ngClass]="{'list-group-item-success': answer === question.correct && grading }"
+      [ngClass]="{'list-group-item-danger': question.correct !== answer && grading }"
+      class="list-group-item">
+        <input
+          type="radio"
+          name="{{question._id}}"
+          [(ngModel)]="answer"
+          value="true">
+        True
+    </li>
+    <li
+      [ngClass]="{'list-group-item-success': answer === question.correct && grading}"
+      [ngClass]="{'list-group-item-danger': question.correct !== answer && grading}"
+      class="list-group-item">
+        <input
+          type="radio"
+          name="{{question._id}}"
+          [(ngModel)]="answer"
+          value="false">
+        False
+    </li>
+</ul>
+<p>Your answer: {{answer}}</p>
+<button class="btn btn-success" (click)="grade()">Grade</button>
+
+

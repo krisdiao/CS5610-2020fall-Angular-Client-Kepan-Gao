@@ -14,16 +14,26 @@ import { TopicPillsComponent } from './topic-pills/topic-pills.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {LessonService} from '../services/LessonService';
 import {TopicService} from '../services/TopicService';
+import { QuizzesServiceClient } from 'src/services/quiz.service.client';
+import { QuestionsServiceClient } from 'src/services/question.service.client';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseNavigatorComponent,
     CourseListComponent,
-    ModuleListComponent,
-    LessonTabsComponent,
-    TopicPillsComponent,
-    WidgetListComponent
+    QuizzesComponent,
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultipleChoiceQuestionComponent,
+    // ModuleListComponent,
+    // LessonTabsComponent,
+    // TopicPillsComponent,
+    // WidgetListComponent,
   ],
     imports: [
         BrowserModule,
@@ -31,7 +41,12 @@ import {TopicService} from '../services/TopicService';
         FormsModule
     ],
   providers: [
-    CourseService, ModuleService, LessonService, TopicService,
+    CourseService,
+    // ModuleService,
+    // LessonService,
+    // TopicService,
+    QuizzesServiceClient,
+    QuestionsServiceClient,
   ],
   bootstrap: [AppComponent]
 })

@@ -13,11 +13,11 @@ export class CourseListComponent implements OnInit {
   courseId = '';
 
   constructor(
-    private activedRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private courseService: CourseService) { }
 
   ngOnInit(): void {
-    this.activedRoute.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       this.courseId = params.cid;
     });
 

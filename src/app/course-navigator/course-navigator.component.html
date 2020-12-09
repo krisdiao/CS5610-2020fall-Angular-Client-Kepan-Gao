@@ -1,105 +1,116 @@
 <div class="row">
-  <div class="col-3">
+  <div class="col-6">
     <app-course-list></app-course-list>
   </div>
-  <div class="col-3">
-    <app-module-list></app-module-list>
-  </div>
-  <div class="col-6">
-    <app-lesson-tabs></app-lesson-tabs>
-    <app-topic-pills></app-topic-pills>
-<!--    <app-widget-list></app-widget-list>-->
-  </div>
+<!--  <div class="col-6">-->
+<!--    <app-quizzes></app-quizzes>-->
+<!--  </div>-->
 </div>
 
 
-<h1>Course Navigator</h1>
-<div class="row">
-  <div class="col-3">
-    <ul class="list-group">
-      <li class="list-group-item active">
-        Courses
-        {{selectedCourse.title}}
-      </li>
-      <li
-        [ngClass]="{'list-group-item-success': course === selectedCourse}"
-        (click)="selectCourse(course)"
-        *ngFor="let course of courses"
-        class="list-group-item">
-        <span [hidden]="course.editing">
-          {{course.title}}
-        </span>
-        <input [hidden]="!course.editing" [(ngModel)]="course.title"/>
-        <button class="float-right" (click)="deleteCourse(course)">
-          Delete
-        </button>
-        <button class="float-right" [hidden]="course.editing" (click)="editCourse(course)">
-          Edit
-        </button>
-        <button class="float-right" [hidden]="!course.editing" (click)="saveCourse(course)">
-          Save
-        </button>
-      </li>
-      <li class="list-group-item">
-        <button (click)="createCourse()">
-        Create
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="col-3">
-    <ul class="list-group">
-      <li class="list-group-item active">Modules {{selectedModule.title}}</li>
-      <li
-        [ngClass]="{'list-group-item-success': module === selectedModule}"
-        (click)="selectModule(module)"
-        *ngFor="let module of modules"
-          class="list-group-item">
-        {{module.title}}
-        <button  class="float-right"  (click)="deleteModule(module)">Delete</button>
-        <button  class="float-right"  (click)="saveModule(module)">Save</button>
-      </li>
-      <li class="list-group-item">
-        <button (click)="createModuleForCourse(selectedModule)">
-          Create
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="col-3">
-    <ul class="list-group">
-      <li class="list-group-item active">Lessons {{selectedLesson.title}}</li>
-      <li
-        [ngClass]="{'list-group-item-success': lesson === selectedLesson}"
-        (click)="selectLesson(lesson)"
-        *ngFor="let lesson of lessons"
-        class="list-group-item">
-        {{lesson.title}}
-        <button (click)="deleteModule(lesson)">Delete</button>
-        <button (click)="saveModule(lesson)">Save</button>
-      </li>
-      <li class="list-group-item">
-        <button (click)="createLessonForModule(selectedModule)">
-          Create
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="col-3">
-    <ul class="list-group">
-      <li class="list-group-item active">Topics</li>
-      <li *ngFor="let topic of topics"
-          class="list-group-item">
-        {{topic.title}}
-        <button (click)="deleteTopic(topic)">Delete</button>
-        <button (click)="saveTopic(topic)">Save</button>
-      </li>
-      <li class="list-group-item">
-        <button (click)="createTopicForLesson(selectedLesson)">
-          Create
-        </button>
-      </li>
-    </ul>
-  </div>
-</div>
+
+<!--<div class="row">-->
+<!--  <div class="col-3">-->
+<!--    <app-course-list></app-course-list>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <app-module-list></app-module-list>-->
+<!--  </div>-->
+<!--  <div class="col-6">-->
+<!--    <app-lesson-tabs></app-lesson-tabs>-->
+<!--    <app-topic-pills></app-topic-pills>-->
+<!--&lt;!&ndash;    <app-widget-list></app-widget-list>&ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--<h1>Course Navigator</h1>-->
+<!--<div class="row">-->
+<!--  <div class="col-3">-->
+<!--    <ul class="list-group">-->
+<!--      <li class="list-group-item active">-->
+<!--        Courses-->
+<!--        {{selectedCourse.title}}-->
+<!--      </li>-->
+<!--      <li-->
+<!--        [ngClass]="{'list-group-item-success': course === selectedCourse}"-->
+<!--        (click)="selectCourse(course)"-->
+<!--        *ngFor="let course of courses"-->
+<!--        class="list-group-item">-->
+<!--        <span [hidden]="course.editing">-->
+<!--          {{course.title}}-->
+<!--        </span>-->
+<!--        <input [hidden]="!course.editing" [(ngModel)]="course.title"/>-->
+<!--        <button class="float-right" (click)="deleteCourse(course)">-->
+<!--          Delete-->
+<!--        </button>-->
+<!--        <button class="float-right" [hidden]="course.editing" (click)="editCourse(course)">-->
+<!--          Edit-->
+<!--        </button>-->
+<!--        <button class="float-right" [hidden]="!course.editing" (click)="saveCourse(course)">-->
+<!--          Save-->
+<!--        </button>-->
+<!--      </li>-->
+<!--      <li class="list-group-item">-->
+<!--        <button (click)="createCourse()">-->
+<!--        Create-->
+<!--        </button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <ul class="list-group">-->
+<!--      <li class="list-group-item active">Modules {{selectedModule.title}}</li>-->
+<!--      <li-->
+<!--        [ngClass]="{'list-group-item-success': module === selectedModule}"-->
+<!--        (click)="selectModule(module)"-->
+<!--        *ngFor="let module of modules"-->
+<!--          class="list-group-item">-->
+<!--        {{module.title}}-->
+<!--        <button  class="float-right"  (click)="deleteModule(module)">Delete</button>-->
+<!--        <button  class="float-right"  (click)="saveModule(module)">Save</button>-->
+<!--      </li>-->
+<!--      <li class="list-group-item">-->
+<!--        <button (click)="createModuleForCourse(selectedModule)">-->
+<!--          Create-->
+<!--        </button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <ul class="list-group">-->
+<!--      <li class="list-group-item active">Lessons {{selectedLesson.title}}</li>-->
+<!--      <li-->
+<!--        [ngClass]="{'list-group-item-success': lesson === selectedLesson}"-->
+<!--        (click)="selectLesson(lesson)"-->
+<!--        *ngFor="let lesson of lessons"-->
+<!--        class="list-group-item">-->
+<!--        {{lesson.title}}-->
+<!--        <button (click)="deleteModule(lesson)">Delete</button>-->
+<!--        <button (click)="saveModule(lesson)">Save</button>-->
+<!--      </li>-->
+<!--      <li class="list-group-item">-->
+<!--        <button (click)="createLessonForModule(selectedModule)">-->
+<!--          Create-->
+<!--        </button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <ul class="list-group">-->
+<!--      <li class="list-group-item active">Topics</li>-->
+<!--      <li *ngFor="let topic of topics"-->
+<!--          class="list-group-item">-->
+<!--        {{topic.title}}-->
+<!--        <button (click)="deleteTopic(topic)">Delete</button>-->
+<!--        <button (click)="saveTopic(topic)">Save</button>-->
+<!--      </li>-->
+<!--      <li class="list-group-item">-->
+<!--        <button (click)="createTopicForLesson(selectedLesson)">-->
+<!--          Create-->
+<!--        </button>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
 
